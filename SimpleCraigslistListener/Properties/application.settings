@@ -1,0 +1,45 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SimpleCraigslistListener.Properties" GeneratedClassName="application">
+  <Profiles />
+  <Settings>
+    <Setting Name="smtp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">smtp.gmail.com</Value>
+    </Setting>
+    <Setting Name="smtpUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="smtpPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="mailSubject" Type="System.String" Scope="User">
+      <Value Profile="(Default)">NotifyBot : Craigslist Notification</Value>
+    </Setting>
+    <Setting Name="destinationEmail" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="searchResult" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="rssLocation1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://losangeles.craigslist.org/sss/index.rss</Value>
+    </Setting>
+    <Setting Name="rssLocation2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://phoenix.craigslist.org/search/?areaID=18&amp;catAbb=sss&amp;query=dyson&amp;format=rss</Value>
+    </Setting>
+    <Setting Name="rssLocation3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://phoenix.craigslist.org/sss/index.rss</Value>
+    </Setting>
+    <Setting Name="rssLocation4" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="rssLocation5" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="jobStartUpTime" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="jobIntervalScan" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
