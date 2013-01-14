@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace SimpleCraigslistListener
+namespace PK.SimpleCraigslistListener.BLL
 {
 
     /// <summary>

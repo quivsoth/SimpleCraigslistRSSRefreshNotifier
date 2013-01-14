@@ -6,21 +6,23 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
+using config = PK.SimpleCraigslistListener.BLL.Properties.application;
+using PK.SimpleCraigslistListener.BLL;
 
-namespace SimpleCraigslistListener
+namespace PK.SimpleCraigslistListener.Utilities
 {
     public class Utilities
     {
         public static void SendMail(string subject, string body)
         {
-            var fromAddress = new MailAddress(Properties.application.Default.smtpUser, Properties.application.Default.mailSubject);
+            var fromAddress = new MailAddress(config.Default.smtpUser, config.Default.mailSubject);
             var toAddress = new MailAddress("phillip.knezevich@live.com");
-            string fromPassword = Properties.application.Default.smtpPassword;
+            string fromPassword = config.Default.smtpPassword;
             
 
             var smtp = new SmtpClient
             {
-                Host = Properties.application.Default.smtp,
+                Host = config.Default.smtp,
                 Port = 587,
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
@@ -41,8 +43,7 @@ namespace SimpleCraigslistListener
                 string body = "Results for Craigslist RSS<br><br> <a href=\"" + f.Link + "\">" + f.Title + "</a><br>" + f.Description + "";
                 sb.AppendLine(body);
             }
-
-            SimpleCraigslistListener.Utilities.SendMail("Craigslist RSS Results", sb.ToString());
+            SendMail("Craigslist RSS Results", sb.ToString());
         }
     }
 }

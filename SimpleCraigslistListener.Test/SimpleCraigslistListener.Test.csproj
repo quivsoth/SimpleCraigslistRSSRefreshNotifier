@@ -57,9 +57,13 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SimpleCraigslistListener\SimpleCraigslistListener.Console.csproj">
+    <ProjectReference Include="..\SimpleCraigslistListener.BLL\PK.SimpleCraigslistListener.BLL.csproj">
+      <Project>{1223d247-f1e9-4b31-ba36-49a8da55510b}</Project>
+      <Name>PK.SimpleCraigslistListener.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleCraigslistListener\PK.SimpleCraigslistListener.Console.csproj">
       <Project>{485e2476-10e8-4eb7-b717-2ecf9cb6f3b4}</Project>
-      <Name>SimpleCraigslistListener.Console</Name>
+      <Name>PK.SimpleCraigslistListener.Console</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

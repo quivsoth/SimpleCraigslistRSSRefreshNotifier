@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleCraigslistListener
+namespace PK.SimpleCraigslistListener.BLL
 {
 
     /// <summary>

@@ -1,4 +1,6 @@
-﻿using Quartz;
+﻿using PK.SimpleCraigslistListener.BLL;
+using PK.SimpleCraigslistListener.Utilities;
+using Quartz;
 using Quartz.Impl;
 using System;
 using System.Collections.Generic;
@@ -12,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
-using config = SimpleCraigslistListener.Properties.application;
+using config = PK.SimpleCraigslistListener.BLL.Properties.application;
 
 namespace SimpleCraigslistListener
 {
@@ -39,10 +41,10 @@ namespace SimpleCraigslistListener
         {
             String configSettings = "Craigslist RSS Listener\n--\nWith Config:\nJob Start up (Seconds): " +
             "{0}\nJob Scan Interval (Seconds): {1}\nMail Server: {2}\nMail Server Username: {3}\n" +
-            "Mail Server Password: *************\nDestination Email: {4}\n# of Search results: {5}\nRSS Feed: {5}\n--";
-            
-            Console.WriteLine(String.Format(configSettings, 
-                                                config.Default.jobStartUpTime.ToString(), 
+            "Mail Server Password: *************\nDestination Email: {4}\n# of Search results: {5}\nRSS Feed: {6}\n--";
+
+            Console.WriteLine(String.Format(configSettings,
+                                                config.Default.jobStartUpTime.ToString(),
                                                 config.Default.jobIntervalScan.ToString(),
                                                 config.Default.smtp,
                                                 config.Default.smtpUser,
@@ -72,7 +74,7 @@ namespace SimpleCraigslistListener
             List<RssFeedItem> result = newFeed.Except(feed).ToList();
             Program.Feed = newFeed;
 
-            if (result.Count == 0)  Console.Write(".");
+            if (result.Count == 0) Console.Write(".");
             else
             {
                 Console.WriteLine("New feed(s) sent!");
@@ -90,12 +92,21 @@ namespace SimpleCraigslistListener
 
             ITrigger trigger = TriggerBuilder.Create()
                 .WithIdentity("craigslistRssTrigger", "pk.cg.org")
-                .StartAt(DateBuilder.FutureDate(Properties.application.Default.jobStartUpTime, IntervalUnit.Second))
-                .WithSimpleSchedule(x => x.RepeatForever().WithIntervalInSeconds(Properties.application.Default.jobIntervalScan))
+                .StartAt(DateBuilder.FutureDate(config.Default.jobStartUpTime, IntervalUnit.Second))
+                .WithSimpleSchedule(x => x.RepeatForever().WithIntervalInSeconds(config.Default.jobIntervalScan))
                 .Build();
 
             sched.ScheduleJob(job, trigger);
             sched.Start();
+        }
+    }
+    public class RSSScheduledJob : IJob
+    {
+        public RSSScheduledJob() { }
+
+        public void Execute(IJobExecutionContext context)
+        {
+            Program.QueryRSSCollections();
         }
     }
 }

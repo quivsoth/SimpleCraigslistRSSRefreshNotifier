@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
+using PK.SimpleCraigslistListener.BLL;
 
 namespace SimpleCraigslistListener.Test
 {
@@ -44,8 +45,7 @@ namespace SimpleCraigslistListener.Test
 
             string subject = "Craigslist notification, a new post detected - " + sampleItem.Link;
             string body = "A new item has been detected!! <br><br> <a href=\"" + sampleItem.Link + "\">" + sampleItem.Title + "</a><br>" + sampleItem.Description + "";
-
-            SimpleCraigslistListener.Utilities.SendMail(subject, body);
+            PK.SimpleCraigslistListener.Utilities.Utilities.SendMail(subject, body);
             //SimpleCraigslistListener.Program.SendMail(sampleItem, "custom body");
         }
 

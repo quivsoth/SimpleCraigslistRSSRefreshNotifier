@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SimpleCraigslistListener.Properties {
+namespace PK.SimpleCraigslistListener.BLL.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class application : global::System.Configuration.ApplicationSettingsBase {
+    public partial class application : global::System.Configuration.ApplicationSettingsBase {
         
         private static application defaultInstance = ((application)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new application())));
         
@@ -25,7 +25,7 @@ namespace SimpleCraigslistListener.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("smtp.gmail.com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("!ADD!")]
         public string smtp {
             get {
                 return ((string)(this["smtp"]));
@@ -37,7 +37,7 @@ namespace SimpleCraigslistListener.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("!ADD!")]
         public string smtpUser {
             get {
                 return ((string)(this["smtpUser"]));
@@ -49,7 +49,7 @@ namespace SimpleCraigslistListener.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("!ADD!")]
         public string smtpPassword {
             get {
                 return ((string)(this["smtpPassword"]));
@@ -73,7 +73,7 @@ namespace SimpleCraigslistListener.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("!ADD!")]
         public string destinationEmail {
             get {
                 return ((string)(this["destinationEmail"]));
@@ -97,62 +97,13 @@ namespace SimpleCraigslistListener.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://losangeles.craigslist.org/sss/index.rss")]
+        [global::System.Configuration.DefaultSettingValueAttribute("!ADD!")]
         public string rssLocation1 {
             get {
                 return ((string)(this["rssLocation1"]));
             }
             set {
                 this["rssLocation1"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://phoenix.craigslist.org/search/?areaID=18&catAbb=sss&query=dyson&format=rss" +
-            "")]
-        public string rssLocation2 {
-            get {
-                return ((string)(this["rssLocation2"]));
-            }
-            set {
-                this["rssLocation2"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://phoenix.craigslist.org/sss/index.rss")]
-        public string rssLocation3 {
-            get {
-                return ((string)(this["rssLocation3"]));
-            }
-            set {
-                this["rssLocation3"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string rssLocation4 {
-            get {
-                return ((string)(this["rssLocation4"]));
-            }
-            set {
-                this["rssLocation4"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string rssLocation5 {
-            get {
-                return ((string)(this["rssLocation5"]));
-            }
-            set {
-                this["rssLocation5"] = value;
             }
         }
         
